@@ -1,21 +1,24 @@
 #include <iostream>
 using namespace std;
-void armstrong(int m,int n)
+void strong(int m,int n)
 {
-	int a,b,c,i;
-	cout<<"the Armstrong numbers between "<<m<<" and "<<n<<" are:\n";
+	int a,b,c,d,i,j;
+	cout<<"the Strong numbers between "<<m<<" and "<<n<<" are:\n";
 	for(i=m;i<=n;i++)
 	{
 		a=i;
-		c=0;
+		d=0;
 		while(a!=0)
     	{
     		b=a%10;
-    		c=c+(b*b*b);
     		a=a/10;
+    		c=1;
+    		for(j=1;j<=b;j++)
+    		c=c*j;
+    		d=d+c;
     	}
-    	if(c==i)
-    	cout<<c<<endl;
+    	if(d==i)
+    	cout<<d<<endl;
 	}
 }
 int main()
@@ -26,6 +29,6 @@ int main()
 	if(n<0 || m<0)
 	cout<<"incorrect input";
 	else
-	armstrong(m,n);
+	strong(m,n);
 	return 0;
 }
